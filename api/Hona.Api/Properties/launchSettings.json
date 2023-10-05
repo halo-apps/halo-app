@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ENV": ""
+      }
+    },
+    "Hona.Api": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENV": "dev"
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "https://localhost:3002;http://localhost:3003"
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:3003",
+      "sslPort": 3002
+    }
+  }
+}

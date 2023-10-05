@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    //防止提示：Cannot find module 'pinia'. Did you mean to set the 'moduleResolution' option to 'node', or to add aliases to the 'paths' option?
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "ES2022",
+    "types": [
+      "@types",
+      //防止提示：Property 'globEager' does not exist on type 'ImportMeta'.
+      "vite/client"
+    ],
+    "allowSyntheticDefaultImports": true
+    //否则moment提示：can only be default-imported using the 'allowSyntheticDefaultImports' flag
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

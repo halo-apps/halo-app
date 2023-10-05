@@ -1,0 +1,16 @@
+{
+  "application": "Tool", //应用标识
+  //配置文件数据库，如果没有配置那么自动使用文件
+  "central": {
+    "name": "Install_Central",
+    "conn": "Data Source=\"install/Install_Central.db\"",
+    "type": "Sqlite"
+  },
+  //当前应用数据的数据库
+  "business": {
+    "name": "Install_Business",
+    "conn": "Data Source=\"install/Install_Business.db\"",
+    "type": "Sqlite"
+  },
+  "plugins": "Hona.dll,Hona.Driver.dll"
+}

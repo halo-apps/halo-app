@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "ES2022",
+    "types": [
+      //防止提示：Property 'globEager' does not exist on type 'ImportMeta'.
+      "vite/client"
+    ],
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

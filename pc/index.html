@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json"/>
+  <script>
+    let serviceWorker = navigator.serviceWorker
+    serviceWorker?.register('/default/js/sw.js')
+  </script>
+  <style>
+    /*防止网速慢，导致产生额外的边距和填充*/
+    body {
+      margin: 0;
+    }
+
+    html, body, .app {
+      height: 100%; /*防止loading不垂直居中*/
+      /*overflow: hidden; 不干扰自定义页面的滚动条*/
+    }
+
+    /*首屏加载*/
+    .first-loading {
+      width: 100%;
+      color: #38c;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <script src="/<%= VITE_SETTING_FILE %>?v=<%= VITE_RUNTIME_VERSION %>"></script>
+</head>
+<body class="app" spellcheck="false">
+<div class="first-loading">页面加载中，请稍侯...</div>
+<script type="module" src="/src/main.ts" defer></script>
+</body>
+</html>

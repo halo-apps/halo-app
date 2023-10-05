@@ -1,0 +1,18 @@
+# https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space #使用Space缩进还是使用Tab缩进
+indent_size = 2 #缩进大小
+end_of_line = lf
+insert_final_newline = false #是否使用新行结束文档
+trim_trailing_whitespace = true
+
+[package.json]
+insert_final_newline = true #使用新行结尾，防止服务端拉取改动package.json文件
+
+[*.md]
+trim_trailing_whitespace = false
+
+#在这里，可以重写编辑器的配置，Editor -> CodeStyle，启用editorconfig可以进行启用
