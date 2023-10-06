@@ -16,13 +16,13 @@ Hona框架是一套融合并时刻跟进当下前沿技术的低代码框架。
 
 演示效果：
 <div style="text-align: center;">
-  <img alt="setting" src="https://tool-dev.honastar.com/demo/setting.png" height="80"/>
-  <img alt="layout-desktop" src="https://tool-dev.honastar.com/demo/layout-desktop.png" height="80"/>
-  <img alt="layout-side" src="https://tool-dev.honastar.com/demo/layout-side.png" height="80"/>
-  <img alt="layout-top" src="https://tool-dev.honastar.com/demo/layout-top.png" height="80"/>
-  <img alt="plugin-request" src="https://tool-dev.honastar.com/demo/plugin-request.png" height="80"/>
-  <img alt="plugin-schema" src="https://tool-dev.honastar.com/demo/plugin-schema.png" height="80"/>
-  <img alt="plugin-stock" src="https://tool-dev.honastar.com/demo/plugin-stock.png" height="80"/>
+  <img alt="setting" src="https://tool-dev.honastar.com/demo/setting.png?v=1" height="80"/>
+  <img alt="layout-desktop" src="https://tool-dev.honastar.com/demo/layout-desktop.png?v=1" height="80"/>
+  <img alt="layout-side" src="https://tool-dev.honastar.com/demo/layout-side.png?v=1" height="80"/>
+  <img alt="layout-top" src="https://tool-dev.honastar.com/demo/layout-top.png?v=1" height="80"/>
+  <img alt="plugin-request" src="https://tool-dev.honastar.com/demo/plugin-request.png?v=1" height="80"/>
+  <img alt="plugin-schema" src="https://tool-dev.honastar.com/demo/plugin-schema.png?v=1" height="80"/>
+  <img alt="plugin-stock" src="https://tool-dev.honastar.com/demo/plugin-stock.png?v=1" height="80"/>
 </div>
 
 # 安装
