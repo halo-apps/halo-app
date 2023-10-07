@@ -1,4 +1,4 @@
-﻿# 介绍
+# 介绍
 
 Hona框架是一套融合并时刻跟进当下前沿技术的低代码框架。
 
@@ -12,7 +12,7 @@ Hona框架是一套融合并时刻跟进当下前沿技术的低代码框架。
 
 演示站点：[https://dev.honastar.com](https://dev.honastar.com)
 
-演示账号：sa@hona.com 123
+演示账号：sa@hona.com 123456
 
 演示效果：
 <div style="text-align: center;">
@@ -27,7 +27,7 @@ Hona框架是一套融合并时刻跟进当下前沿技术的低代码框架。
 
 # 安装
 
-PC目录：/api
+PC目录：/pc
 
 PC npm包地址：https://www.npmjs.com/package/hona-pc
 
