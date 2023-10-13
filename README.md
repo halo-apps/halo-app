@@ -81,6 +81,8 @@ SqlServer：稳定版
 Sqlite：测试版
 MySql、Oracle、Mongo、Trino：待完善
 
+多特征
+
 多开放接口
 
 多数据格式
@@ -119,3 +121,7 @@ API：3s内
 
 更快的启动速度
 API：1s内
+
+## 更好
+
+更好的开发体验
