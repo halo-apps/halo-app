@@ -10,10 +10,6 @@ Hona框架是一套融合并时刻跟进当下前沿技术的低代码框架。
 
 # 目录
 
-演示站点：[https://dev.honastar.com](https://dev.honastar.com)
-
-演示账号：sa@hona.com 123456
-
 PC效果：
 <div style="text-align: center;">
   <img alt="setting" src="https://tool-dev.honastar.com/demo/setting.png?v=1" height="80"/>
@@ -39,27 +35,36 @@ Desktop效果：
 
 # 安装
 
-PC目录：/pc
-
-PC npm包地址：https://www.npmjs.com/package/hona-pc
-
-Mobile目录：/mobile
-
-Mobile npm包地址：https://www.npmjs.com/package/hona-mobile
-
-API目录：/api
-
-API nuget包地址：https://www.nuget.org/packages/Hona
-
-Desktop目录：/desktop
-
-Desktop npm包地址：暂无
+| 发布           | 介绍                                | 版本 &nbsp;&nbsp; | 地址                                        | 仓储文件夹    | 演示                                                                           |
+|--------------|-----------------------------------|-----------------|-------------------------------------------|----------|------------------------------------------------------------------------------|
+| Hona         | 基于.net7构建的API框架                   |                 | https://www.nuget.org/packages/Hona       | /api     | [https://dev.honastar.com](https://dev.honastar.com) <br/>sa@hona.com 123456 |
+| hona-pc      | 基于vue3、element-plus、vite4构建的PC端框架 |                 | https://www.npmjs.com/package/hona-pc     | /pc      |                                                                              |
+| hona-mobile  | 基于vue3、vant4、vite4构建的Mobile端框架    |                 | https://www.npmjs.com/package/hona-mobile | /mobile  |                                                                              |
+| hona-desktop | 基于tauri、vue3、vite4构建的Desktop端框架   |                 | ?                                         | /desktop |                                                                              |
+| hona-app     | 安卓、IOS端框架                         |                 | ?                                         | /app     |                                                                              |
 
 # 用法
 
+| 功能                    | PC | Desktop | Mobile | APP | API |
+|-----------------------|----|---------|--------|-----|-----|
+| [多主题](#themes)        | √  | √       | √      | ?   | √   |
+| [多布局](#layouts)       | √  | √       | √      | ?   | √   |
+| [多语言](#languages)     | √  | √       | √      | ?   | √   |
+| [多控件](#controls)      | √  | √       | √      | ?   | √   |
+| [多数据库](#providers)    | -  | -       | -      | -   | √   |
+| [多特征](#features)      | √  | √       | √      | ?   | √   |
+| [多开放接口](#open_api)    | -  | -       | -      | -   | √   |
+| [多数据格式](#data_format) | -  | -       | -      | -   | √   |
+| [多登录方式](#ssos)        | √  | √       | √      | ?   | √   |
+| [多签名验证](#signers)     | √  | √       | √      | ?   | √   |
+| [多会话保持](#sessions)    | -  | -       | -      | -   | √   |
+| [多授权验证](#auths)       | -  | -       | -      | -   | √   |
+| [多上传方式](#uploads)     | √  | √       | √      | ?   | √   |
+| [自定义](#custom)        | √  | √       | √      | ?   | √   |
+
 ## 更多
 
-多主题
+<a id="themes">多主题</a>
 默认主题、暗色主题、蓝色主题、更多
 
 多布局
@@ -69,12 +74,6 @@ Desktop npm包地址：暂无
 中文、英文、匈牙利文、更多
 
 多控件
-
-多终端
-PC：
-Mobile：
-API：
-Desktop：
 
 多数据库
 SqlServer：稳定版
