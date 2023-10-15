@@ -1,5 +1,6 @@
 using System;
 using Hona.Commons.Helpers;
+using Hona.Drivers.Signers;
 using Hona.Drivers.Ssos;
 using Hona.Executers;
 using Hona.Requests;
@@ -17,10 +18,18 @@ public class BaseTest
     /// </summary>
     public static void ExecuteRequest(Request request, bool throwException = false)
     {
+        var authorization = " pc oYLM7zTPAP6m12tIS3EagOtl4qW+IorWK0hQllm9LQU=  ";
+
         //VIP：无法改进为Requester，因为Requester依赖请求地址，而这里不需要地址，而是直接启动应用执行请求
         var sso = SsoFactory.GetSso("Bearer");
-        sso.Open("oYLM7zTPAP6m12tIS3EagOtl4qW+IorWK0hQllm9LQU=;abc");
-        request.Headers.Authorization = sso.GetAuthorization("pc", "234", request.Url.Value, request.Body);
+        sso.Open("abc");
+        var identify = sso.Identify(authorization);
+
+        var signer = SignerFactory.GetSigner("Default");
+        signer.Open();
+        var signature = signer.Compute(identify.UserId, request.Url.Value, request.Body, "234");
+
+        request.Headers.Authorization = sso.GetAuthorization(identify, signature);
 
         try
         {

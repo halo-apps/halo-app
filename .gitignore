@@ -1,7 +1,7 @@
 ﻿# 忽略前端发包目录
 wwwroot
 public/plugins
-*/public/app
+desktop/public
 
 # desktop
 !*/*/resources/README.md

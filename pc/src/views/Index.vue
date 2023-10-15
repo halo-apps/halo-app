@@ -34,11 +34,11 @@ defineExpose({refresh})
     <el-alert :title="`${$t('sys.welcome')} ${$t('sys.description')}`" type="info" style="margin-bottom: 10px;"
               show-icon></el-alert>
     <panel-group>
-      <panel dark :title="$t(menu.name)" v-for="menu in userStore.menus">
+      <panel dark :title="menu.title" v-for="menu in userStore.menus">
         <div class="menus">
           <div class="menu" v-for="child in menu.children" @click="to(child)">
-            <i :class="child.icon">1</i>
-            <span class="title">{{ $t(child.name) }}</span>
+            <i :class="child.icon"></i>
+            <span class="title">{{ child.title }}</span>
           </div>
         </div>
       </panel>

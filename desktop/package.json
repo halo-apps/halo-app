@@ -1,0 +1,26 @@
+{
+  "name": "hona-desktop",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "desktop:preview": "vite preview",
+    "desktop:tauri:dev": "tauri dev",
+    "desktop:tauri:debug": "tauri build -d -v",
+    "desktop:tauri:build": "tauri build",
+    "desktop:tauri:personal": "tauri build -c src-tauri/tauri.conf.personal.json",
+    "desktop:tauri:icon": "npx @tauri-apps/tauricon src/assets/logo.png"
+  },
+  "dependencies": {
+    "@micro-zoe/micro-app": "1.0.0-rc.0",
+    "@tauri-apps/api": "1.5.0",
+    "vue": "3.3.4"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "1.5.1",
+    "@tauri-apps/tauricon": "1.0.3",
+    "@vitejs/plugin-vue": "4.4.0",
+    "sass": "1.68.0",
+    "vite": "4.4.11"
+  }
+}

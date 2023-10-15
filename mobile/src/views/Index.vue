@@ -58,9 +58,9 @@ onMounted(() => {
   <div class="container page-index footer">
     <van-notice-bar left-icon="volume-o" scrollable :text="$t('sys.description')"/>
     <div v-for="menu in userStore.menus" v-if="userStore.menus">
-      <div class="index-title">{{ $t(menu.name) }}</div>
+      <div class="index-title">{{ menu.title }}</div>
       <van-grid clickable>
-        <van-grid-item :icon="child.icon" :to="getMenuUrl(child,child.id)" :text="$t(child.name)"
+        <van-grid-item :icon="child.icon" :to="getMenuUrl(child,child.id)" :text="child.title"
                        v-for="child in menu.children">
         </van-grid-item>
       </van-grid>
@@ -69,7 +69,7 @@ onMounted(() => {
   </div>
   <van-tabbar fixed v-model="active">
     <van-tabbar-item :to="getMenuUrl(menu,menu.id)" :name="menu.id.toString()" :icon="menu.icon"
-                     v-for="menu in userStore.menus">{{ $t(menu.name) }}
+                     v-for="menu in userStore.menus">{{ menu.title }}
     </van-tabbar-item>
   </van-tabbar>
 </template>

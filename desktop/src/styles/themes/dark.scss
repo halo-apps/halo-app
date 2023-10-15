@@ -1,0 +1,19 @@
+/*暗色主题 标题栏*/
+html.dark {
+  body {
+    border: 1px solid #23272e;
+  }
+
+  .title-bar i {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .title-bar i:hover {
+    background: #3f4144;
+  }
+
+  .title-bar i.close:hover {
+    background: #f00;
+    color: #fff;
+  }
+}

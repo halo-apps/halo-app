@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+<!--     <DirectoryRef Id="TARGETDIR"> -->
+<!--       <Directory Id="PROGRAMFILESFOLDER" Name="PFiles"> -->
+<!--         <Directory Id="WIXUI_INSTALLDIR" Name="TEST"> -->
+<!--         </Directory> -->
+<!--         <Directory Id="INSTALLFOLDER" Name="TEST"> -->
+<!--           <Directory Id="Folder1" Name="Folder1"/> -->
+<!--         </Directory> -->
+<!--       </Directory> -->
+<!--     </DirectoryRef> -->
+<!--     <Property Id="ALLUSERS" Value="2"/> -->
+<!--     <Property Id="MSIINSTALLPERUSER" Value="1"/> -->
+<!--     <Property Id="ApplicationFolderName" Value="TEST2"/> -->
+    <Property Id="WixAppFolder" Value="WixPerUserFolder"/>
+  </Fragment>
+</Wix>

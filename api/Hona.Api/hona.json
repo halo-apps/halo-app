@@ -1,5 +1,8 @@
 {
-  "application": "Tool", //应用标识
+  //应用标识
+  "application": "Tool",
+  //监听socket信息
+  "socket": "ws://0.0.0.0:3004",
   //配置文件数据库，如果没有配置那么自动使用文件
   "central": {
     "name": "Install_Central",
@@ -12,5 +15,5 @@
     "conn": "Data Source=\"install/Install_Business.db\"",
     "type": "Sqlite"
   },
-  "plugins": "Hona.dll,Hona.Driver.dll"
+  "plugins": "Hona.dll"
 }

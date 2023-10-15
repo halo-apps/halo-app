@@ -18,8 +18,12 @@ public class HomeController : Controller
     [Route("/status")]
     public object Status()
     {
+        var config = ObjectHelper.Clone(ConfigHelper.GetConfig());
+        //清空敏感信息
+        config.Central = null;
+        config.Business = null;
+
         //limiter
-        //TODO 获取当前POD唯一标识 包括IP和端口号
         var result = new
         {
             LocalIp = NetworkHelper.GetIp() + ":" + Request.HttpContext.Connection.LocalPort,
@@ -27,8 +31,7 @@ public class HomeController : Controller
             Host = NetworkHelper.GetHost(),
             Root = DirectoryHelper.GetRunDirectory(),
             WebEnvironment = WebHostEnvironment.EnvironmentName,
-            Config = ConfigHelper.GetFile(),
-            ConfigHelper.GetConfig().Environment,
+            Config = config,
             Schema = Request.Scheme,
             Url = Request.GetDisplayUrl(),
             Args = EnvironmentHelper.GetArgs(),

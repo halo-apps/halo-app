@@ -1,6 +1,6 @@
 window.setting = {
   api: {
-    url: 'http://localhost:5050'
+    url: 'http://localhost:3006'
   },
   env: "desktop",
   web: {

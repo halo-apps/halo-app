@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1612363947134'); /* IE9 */
+  src: url('iconfont.eot?t=1612363947134#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOMAAsAAAAACCgAAAM+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqDQIMEATYCJAMUCwwABCAFhG0HThsWBxEVnIfIfiZkc0rzdIf3Lrt+NFJH4kwQoc6alWSfTw4eUfUABMkDcYlUYkvAtQOggPV9v7laAmMiTFGuRQ93vvBTGnqZ9OCPe6e/JT6ffcttzokBxp13WbgnjUlWIIl6w9iVF3EcAliKKIc0a9GuGx4GY5wAMm70yMF4KQWmJl3wENySpQbZgIOnVqprwHr/+/KVKuKBwtEYUzuNaD6MRu/dD311Ikj0cxGY4+kAtgo0UA4wIFNKDePQYaAcGqv0NjQCLB4KNVa3+h8afugbBMScHYms+YcHBkGhQVyM1BAAjRDfnBzTRmHgQ30UAh8aolDwoW8QDdzXKrBAKrASOIAIxXbVGATJMzYeT4ubnLmRVVvAOj1UYqsfXb1dxAc9dHJbv5AO91Q2nGFDEp5rVx2ExKHVRyqjtx9JHp5lBTHzgkyBPxHH2y0HE4d8v4UueXhAe3qKpT8rebhnlMjUEdvO7skcPmzL3nPZI4dvvbA/a8TI7fvOZ1RPe1bBXrPb+zu8Z3ZNos+B+Z/6fZq6rXkdv+CcOp/IrNroZ7Rp7GckXhCP3L17K54f522ju/d0/69o01c/RXODv5EaUaSpNN7W4aUldXfvhZthwtNJtAjaBbhnS5X6vnPHy9KlTN+LnTt/lDLsP3cd+pFOfrlj53dmAbP1aPUcAhqvbgxBnaQVgJ6mvv/Q37Cq9tVOA6P1/nu+AeBZo8dHfHvA0I/xV4S0Zv6+dkYADGcbSsfITFsofhECODRPuFDwp6p+miWNF+OIMlunguCRGYMihULQeBTDGEI5cPCpBi4eDcFSlparfdKZgkZMKlCGpQCEGCdAEeEiaGJcxxjCc3DI4ju4xESDpYekb+lTQiDD6SqoFC3V/zQ03rGl1lOQ/kI3m0qSbJ/4DYmDm4o0z4afcJAxZsSfrlRlYvGWHuA0GOMpiB/RaNqrhkuWcdmb0sbbxYmroFK0VP/T0HjHbnM95T7/QjebSmrqKrTfkDh0TkWat8A8Ba5V3bVcE3+6UpWJxVt6AB2MGfAUygeNaDTte/jCJUONuK0gnV9kn3ELYDG2cESJFiOOuOynIKp39j/zbEwSGwHc2g5u1xgfUS4WAAA=') format('woff2'),
+  url('iconfont.woff?t=1612363947134') format('woff'),
+  url('iconfont.ttf?t=1612363947134') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1612363947134#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-restore:before {
+  content: "\e63d";
+}
+
+.icon-full-screen:before {
+  content: "\e63f";
+}
+
+.icon-min:before {
+  content: "\e65b";
+}
+
+.icon-close2:before {
+  content: "\e506";
+}
+

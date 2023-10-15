@@ -13,8 +13,7 @@ public class Program
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                //var urls = "https://localhost:6001;http://localhost:6090";
-                //webBuilder.UseUrls("http://0.0.0.0:5000");//TODO: 人为添加监听IP和端口，防止默认监听localhost:5000导致外部无法访问服务
+                //本地不自定义URL监听，本地配置后会导致非调试模式下无法启动，线上启用监听会导致SSL证书无法使用而启动失败
                 webBuilder.UseStartup<Startup>();
             });
 }

@@ -1,0 +1,19 @@
+/*蓝色主题 标题栏*/
+html.blue {
+  body {
+    border: 1px solid #3f495b;
+  }
+
+  .title-bar i {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .title-bar i:hover {
+    background: #48556a;
+  }
+
+  .title-bar i.close:hover {
+    background: #f00;
+    color: #fff;
+  }
+}

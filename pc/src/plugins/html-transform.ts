@@ -5,9 +5,11 @@ let indexPlugin = (env) => {
     transformIndexHtml(html) {
       // console.log(env)
       ///<title>(.*?)<\/title>/
-      let result = html
-        .replace(/<%= VITE_SETTING_FILE %>/, env.VITE_SETTING_FILE)
-        .replace(/<%= VITE_RUNTIME_VERSION %>/, VITE_RUNTIME_VERSION)
+      let keys = Object.keys(env)
+      keys.forEach(key => {
+        html = html.replace(`<%= ${key} %>`, env[key])
+      })
+      let result = html.replace(/<%= VITE_RUNTIME_VERSION %>/, VITE_RUNTIME_VERSION)
       return result
     },
   }

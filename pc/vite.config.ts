@@ -8,7 +8,7 @@ export default defineConfig(({command, mode}) => {
   const env = loadEnv(mode, process.cwd() + envDir)
   // console.log(env)
   return {
-    base: '/', //配置资源路径是根目录
+    base: env.VITE_PUBLIC_DIRECTORY,
     envDir: '.' + envDir,
     build: {
       outDir: env.VITE_PUBLISH_DIRECTORY,
