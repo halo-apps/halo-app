@@ -15,7 +15,7 @@ PC/Mobile/Desktop/API效果
   <img alt="pc" src="https://tool-dev.honastar.com/demo/pc.png?v=1" height="80"/>
   <img alt="mobile" src="https://tool-dev.honastar.com/demo/mobile.png?v=1" height="80"/>
   <img alt="desktop" src="https://tool-dev.honastar.com/demo/desktop.png?v=1" height="80"/>
-  <img alt="desktop" src="https://tool-dev.honastar.com/demo/api.png?v=1" height="80"/>
+  <img alt="api" src="https://tool-dev.honastar.com/demo/api.png?v=1" height="80"/>
 </div>
 
 # 介绍
