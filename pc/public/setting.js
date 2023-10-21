@@ -1,7 +1,7 @@
 window.setting = {
   api: {
-    url: 'https://localhost:3003',
-    ws: 'ws://localhost:3004'
+    url: 'https://localhost:3013',
+    ws: 'ws://localhost:3014'
   },
   env: '',
   web: {

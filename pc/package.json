@@ -16,7 +16,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "2.1.0",
     "@fortawesome/fontawesome-free": "6.4.2",
-    "@micro-zoe/micro-app": "1.0.0-rc.0",
+    "@micro-zoe/micro-app": "1.0.0-rc.1",
     "@monaco-editor/loader": "1.4.0",
     "axios": "1.5.1",
     "clipboard": "2.0.11",
@@ -24,14 +24,14 @@
     "crypto-js": "4.1.1",
     "driver.js": "1.3.0",
     "echarts": "5.4.3",
-    "element-plus": "2.4.0",
+    "element-plus": "2.4.1",
     "file-saver": "2.0.5",
-    "hona-pc": "1.0.125",
+    "hona-pc": "1.1.3",
     "intro.js": "7.2.0",
     "jszip": "3.10.1",
     "moment": "2.29.4",
     "pinia": "2.1.7",
-    "qiankun": "2.10.13",
+    "qiankun": "2.10.14",
     "quill": "1.3.7",
     "sortablejs": "1.15.0",
     "underscore": "1.13.6",
@@ -45,10 +45,10 @@
     "xlsx": "0.18.5"
   },
   "devDependencies": {
-    "@types/node": "20.8.6",
+    "@types/node": "20.8.7",
     "@vitejs/plugin-vue": "4.4.0",
     "@vitejs/plugin-vue-jsx": "3.0.2",
-    "sass": "1.69.3",
-    "vite": "4.4.11"
+    "sass": "1.69.4",
+    "vite": "4.5.0"
   }
 }

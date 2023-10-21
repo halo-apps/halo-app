@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jin.Bootstrap", "Jin.Bootstrap\Jin.Bootstrap.csproj", "{F31B0F15-F231-4CF8-A949-2B1560D8B525}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F31B0F15-F231-4CF8-A949-2B1560D8B525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31B0F15-F231-4CF8-A949-2B1560D8B525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31B0F15-F231-4CF8-A949-2B1560D8B525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31B0F15-F231-4CF8-A949-2B1560D8B525}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88B70F76-BA01-4693-826A-689884F11543}
+	EndGlobalSection
+EndGlobal

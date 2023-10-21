@@ -1,0 +1,51 @@
+{
+  "name": "Hona",
+  "version": "1.0.0",
+  "description": "A Hona application",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron . dev",
+    "package": "electron-builder --dir",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux"
+  },
+  "build": {
+    "extraResources": [
+      {
+        "from": "./public/api",
+        "to": "api"
+      }
+    ],
+    "win": {
+      "icon": "./public/favicon.ico"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ],
+      "category": "Utility"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Hona",
+    "Desktop"
+  ],
+  "license": "CC0-1.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "child_process": "1.0.2",
+    "electron": "18.2.0",
+    "electron-builder": "23.0.3",
+    "electron-reloader": "1.2.3",
+    "merge": "2.1.1"
+  }
+}

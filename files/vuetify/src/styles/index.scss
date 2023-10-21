@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+.toolbar {
+  height: 50px !important;
+
+  .v-toolbar__content {
+    height: 50px !important;
+  }
+}

@@ -1,0 +1,109 @@
+﻿@using Jin.Hona.Commons.Extensions
+@model Jin.Bootstrap.Models.PagingViewModel
+@addTagHelper "*, cloudscribe.Web.Pagination"
+@{
+    ViewData["Title"] = Model.Table.Title;
+}
+@section Styles{
+    <link href="~/node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" />
+}
+<div class="list">
+    <div class="panel">
+        <div class="panel-header">
+            <h1 class="panel-title">@Model.Table.Title</h1>
+        </div>
+        <form class="panel-container search-form">
+            <div class="panel-content">
+                <div class="form-row search-inputs">
+                    @foreach (var table in Model.Tables)
+                    {
+                        @foreach (var search in table.Search)
+                        {
+                            var searchField = table.Fields.First(n => n.Name == search);
+                            <div class="col">
+                                <label>@searchField.Label</label>
+                                <input type="text" data-table="@table.Name" data-field="@searchField.Name" class="form-control" value="@Model.GetCondition(table, searchField)" />
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            @if (Model.IsHasSearch)
+            {
+                <div class="panel-divider"></div>
+            }
+            <div class="panel-footer">
+                <div class="footer-operation">
+                    @if (Model.IsHasSearch)
+                    {
+                        <button type="submit" class="btn btn-primary btn-search"><i class="fa fa-search"></i>搜索</button>
+                    }
+                    <button type="button" class="btn btn-outline-secondary btn-import"><i class="fa fa-upload"></i>导入</button>
+                    <button type="button" class="btn btn-outline-secondary btn-export"><i class="fa fa-share-square-o"></i>导出</button>
+                </div>
+                <div class="footer-content">
+                    <a href="@Model.Next.Insert.Route" class="btn btn-success btn-insert"><i class="fa fa-plus"></i>添加</a>
+                    <button type="button" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i>删除</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <table class="table table-bordered table-hover"
+           data-toggle="table"
+           data-height="500">
+        <thead class="thead-light">
+            <tr>
+                <th data-checkbox="true"></th>
+                @foreach (var table in Model.Tables)
+                {
+                    @foreach (var showFieldName in table.Show)
+                    {
+                        <th>@table.Fields.First(n => n.Name == showFieldName).Label</th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @*遍历主表每一行数据*@
+            @for (var i = 0; i < Model.RowsPrimary.Count; i++)
+            {
+                var id = Model.RowsPrimary[i][Model.Table.Key];
+                <tr id="@id">
+                    <td></td>
+                    @foreach (var table in Model.Tables)
+                    {
+                        @*找到第i条非主表数据*@
+                        var row = Model.Data[table.Name].Count > i ? Model.Data[table.Name][i] : null;
+                        foreach (var showFieldName in table.Show)
+                        {
+                            <td class="hidden">@row?[showFieldName]</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <cs-pager cs-paging-pagenumber="@(Model.Page)"
+              cs-paging-pagesize="@(Model.PageSize)"
+              cs-paging-totalitems="@Model.Count"
+              cs-pager-li-current-class="page-item active"
+              cs-pager-li-other-class="page-item"
+              cs-pager-li-non-active-class="page-item disabled"
+              cs-pager-link-current-class="page-link"
+              cs-pager-link-other-class="page-link"
+              cs-pagenumber-param="page"
+              asp-basehref="@Model.Path"
+              asp-route-pagesize="@(Model.PageSize)"
+              asp-route-condition="@(Model.Condition)">
+    </cs-pager>
+</div>
+@section Scripts{
+    <script src="~/node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="~/node_modules/axios/dist/axios.min.js"></script>
+    <script src="~/node_modules/qs/dist/qs.js"></script>
+    <script src="~/node_modules/crypto-js/crypto-js.js"></script>
+    <script src="~/js/list.js?v=@Model.Runtime.Setting.Version"></script>
+    <script>
+        //console.log('@Model.ToJson()')
+    </script>
+}

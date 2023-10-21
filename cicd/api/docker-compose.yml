@@ -1,0 +1,10 @@
+version: "3.9" # optional since v1.27.0
+services:
+  hona: # 指定服务名称
+    build: . # 指定 Dockerfile 所在路径
+    ports:
+      - "80" # 指定端口映射 物理机端口:容器内端口
+  front:
+    build: .
+    ports:
+      - "80"

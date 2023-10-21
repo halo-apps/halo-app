@@ -1,0 +1,9 @@
+{
+	"api": {
+		"url": "https://localhost:44376/"
+	},
+	"web": {
+		"debug": true,
+		"mta_app_id": "500721809"
+	}
+}

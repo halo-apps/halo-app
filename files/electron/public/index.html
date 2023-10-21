@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!--    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+  <!--    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+  <title>Hona</title>
+  <link rel="stylesheet" href="styles/index.css" type="text/css"/>
+  <link rel="stylesheet" href="styles/iconfont/iconfont.css" type="text/css"/>
+</head>
+<body>
+<div class="app">
+  <iframe src="app/index.html"></iframe>
+  <div class="toolbar">
+    <i class="iconfont icon-min min"></i>
+    <i class="iconfont icon-full-screen max"></i>
+    <i class="iconfont icon-restore restore" style="display: none;"></i>
+    <i class="iconfont icon-close2 close"></i>
+  </div>
+</div>
+<!-- You can also require other files to run in this process -->
+<script src="scripts/renderer.js"></script>
+</body>
+</html>

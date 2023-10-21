@@ -2,6 +2,6 @@
   "api": "http://localhost:3006",
   "args": [
     "--urls=http://localhost:3006",
-    "--env=personal"
+    "--env=desktop"
   ]
 }

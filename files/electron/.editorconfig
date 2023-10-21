@@ -1,0 +1,8 @@
+root = true
+
+[*]
+indent_size = 2
+insert_final_newline = false #是否使用新行结束文档
+
+[package.json]
+insert_final_newline = true #使用新行结尾，防止服务端拉取改动package.json文件

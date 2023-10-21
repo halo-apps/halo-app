@@ -1,0 +1,108 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${name}
+  labels:
+    app: ${name}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${name}
+  template:
+    metadata:
+      labels:
+        app: ${name}
+    spec:
+      imagePullSecrets:
+        - name: aliyun-docker-registry
+      containers:
+        - name: ${name}
+          image: ${image}
+          imagePullPolicy: IfNotPresent #本地没有再去远程拉取镜像
+          ports:
+            - containerPort: 80
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: ENV
+              value: ${env}
+          lifecycle:
+            postStart:
+              exec:
+                command: ['/bin/bash', '-c', ${start} ]
+#          volumeMounts:
+#            - name: nginx-config
+#              mountPath: "/etc/nginx/conf.d/"
+#              readOnly: true
+#      volumes:
+#        - name: nginx-config
+#          configMap:
+#            name: ${name}
+      nodeSelector:
+        kubernetes.io/hostname: master #前端部署在带宽高的节点
+---
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: ${name}
+#data:
+#  default.conf: |
+#    server {
+#      listen       80;
+#      listen  [::]:80;
+#      server_name  localhost;
+#
+#      location / {
+#        root      /app;
+#        try_files $uri $uri/ /index.html;
+#      }
+#
+#      error_page  500 502 503 504  /50x.html;
+#      location = /50x.html {
+#        root     /app;
+#      }
+#    }
+#---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${name}
+spec:
+  selector:
+    app: ${name}
+  ports:
+    - name: ${name}
+      port: 80
+      targetPort: 80
+    - name: ${name}-https
+      port: 443
+      targetPort: 443
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ${name}
+#  annotations:
+#    nginx.ingress.kubernetes.io/server-snippet: |
+#      gzip on;
+#      gzip_min_length 1k;
+#      gzip_comp_level 9;
+#      gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+spec:
+  tls:
+    - hosts:
+        - ${domain}
+      secretName: ${domain}
+  rules:
+    - host: ${domain}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ${name}
+                port:
+                  number: 80
+  ingressClassName: nginx

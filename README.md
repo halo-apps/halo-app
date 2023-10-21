@@ -22,12 +22,12 @@ PC/Mobile/Desktop/API效果
 
 统一演示账号：sa 123456
 
-| 发布           | 包                                                                                                         | 介绍                                | 演示                                                                 |
+| 包            | 版本                                                                                                        | 介绍                                | 演示                                                                 |
 |--------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------|--------------------------------------------------------------------|
-| Hona         | [![NuGet stable version](https://badgen.net/nuget/v/Hona)](https://nuget.org/packages/Hona)               | 基于.net7构建的API框架                   | [https://api-dev.honastar.com](https://api-dev.honastar.com)       |
 | hona-pc      | [![Npm package version](https://badgen.net/npm/v/hona-pc)](https://www.npmjs.com/package/hona-pc)         | 基于vue3、element-plus、vite4构建的PC端框架 | [https://dev.honastar.com](https://dev.honastar.com)               |
 | hona-mobile  | [![Npm package version](https://badgen.net/npm/v/hona-mobile)](https://www.npmjs.com/package/hona-mobile) | 基于vue3、vant4、vite4构建的Mobile端框架    | [https://dev-mobile.honastar.com](https://dev-mobile.honastar.com) |
 | hona-desktop | ...                                                                                                       | 基于tauri、vue3、vite4构建的Desktop端框架   | https://github.com/hona-star/hona-app/releases                     |                                                    |
+| Hona         | [![NuGet stable version](https://badgen.net/nuget/v/Hona)](https://nuget.org/packages/Hona)               | 基于.net7构建的API框架                   | [https://api-dev.honastar.com](https://api-dev.honastar.com)       |
 | hona-app     | ...                                                                                                       | 安卓、IOS端框架                         | ...                                                                |
 
 # 开发教程
@@ -44,30 +44,46 @@ PC/Mobile/Desktop/API效果
 | 3005 | Desktop服务前端端口         |
 | 3006 | Desktop服务接口端口         |
 
+建议每个项目端口步长为10，进而保证端口充足。
+
 # 安装
 
 # 用法
 
 | 功能                    | 介绍                                                    | PC | Desktop | Mobile | APP | API |
 |-----------------------|-------------------------------------------------------|----|---------|--------|-----|-----|
-| [多主题](#themes)        | 默认主题、暗色主题、蓝色主题、更多                                     | √  | √       | √      | ... | √   |
-| [多布局](#layouts)       | 侧边布局、桌面布局、顶部布局、更多                                     | √  | √       | √      | ... | √   |
-| [多语言](#languages)     | 中文、英文、匈牙利文、更多                                         | √  | √       | √      | ... | √   |
+| [多主题](#themes)        | 默认主题、暗色主题、蓝色主题、等                                      | √  | √       | √      | ... | √   |
+| [多布局](#layouts)       | 侧边布局、桌面布局、顶部布局、等                                      | √  | √       | √      | ... | √   |
+| [多语言](#languages)     | 中文、英文、匈牙利文、等                                          | √  | √       | √      | ... | √   |
 | [多控件](#controls)      |                                                       | √  | √       | √      | ... | √   |
 | [多数据库](#providers)    | SqlServer：稳定版 Sqlite：测试版 MySql、Oracle、Mongo、Trino：待完善 | -  | -       | -      | -   | √   |
 | [多特征](#features)      |                                                       | √  | √       | √      | ... | √   |
 | [多开放接口](#open_api)    |                                                       | -  | -       | -      | -   | √   |
-| [多数据格式](#data_format) | xml、json                                              | -  | -       | -      | -   | √   |
+| [多数据格式](#data_format) | xml、json、等                                            | -  | -       | -      | -   | √   |
 | [多登录方式](#ssos)        | 默认登录：稳定版 公司SSO：稳定版 飞书SSO：完善中                          | √  | √       | √      | ... | √   |
 | [多签名验证](#signers)     |                                                       | √  | √       | √      | ... | √   |
 | [多会话保持](#sessions)    |                                                       | -  | -       | -      | -   | √   |
 | [多授权验证](#auths)       |                                                       | -  | -       | -      | -   | √   |
 | [多上传方式](#uploads)     | Server FileServer CDN                                 | √  | √       | √      | ... | √   |
-| [自定义](#custom)        |                                                       | √  | √       | √      | ... | √   |
+| [强大/轻量自定义](#custom)   |                                                       | √  | √       | √      | ... | √   |
 
 ## 更多
 
-<a id="themes">多主题</a>
+## PC功能
+
+### 新增功能
+
+单个添加、批量导入、多表导入
+
+### 修改功能
+
+单个修改、（考虑中：批量覆盖，多表覆盖）
+
+### 删除功能
+
+单个删除、批量删除
+
+### 详情功能
 
 ## 更少
 

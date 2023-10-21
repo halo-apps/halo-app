@@ -1,0 +1,20 @@
+﻿{
+  //桌面版需要单机部署，所以需要完整配置，不能依赖默认配置文件，以防敏感信息泄露
+  //应用标识
+  "application": "Tool",
+  //监听socket信息
+  "socket": "ws://0.0.0.0:3007",
+  //配置文件数据库，如果没有配置那么自动使用文件
+  "central": {
+    "name": "Install_Central",
+    "conn": "Data Source=\"install/Install_Central.db\"",
+    "type": "Sqlite"
+  },
+  //当前应用数据的数据库
+  "business": {
+    "name": "Install_Business",
+    "conn": "Data Source=\"install/Install_Business.db\"",
+    "type": "Sqlite"
+  },
+  "plugins": "Hona.dll"
+}

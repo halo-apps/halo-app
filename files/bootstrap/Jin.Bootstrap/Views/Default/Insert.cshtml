@@ -1,0 +1,72 @@
+﻿@model Jin.Bootstrap.Models.InsertViewModel
+@{
+    ViewData["Title"] = Model.Table.Title;
+}
+@section Styles{
+    <link href="~/node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" />
+}
+<div class="insert">
+    <div class="panel">
+        <div class="panel-header">
+            <h1 class="panel-title">@Model.Table.Title</h1>
+        </div>
+        <form class="panel-container">
+            <div class="panel-content">
+                <div class="form-row">
+                    @foreach (var showFieldName in Model.Table.Show)
+                    {
+                        var field = Model.Table.Fields.First(n => n.Name == showFieldName);
+                        var idName = Model.Table.Name + "." + field.Name;
+                        <div class="form-group">
+                            <label for="@idName">@field.Label</label>
+                            <input type="text" id="@idName" class="form-control" value="" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="panel-footer">
+                <div class="footer-operation">
+                    <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-check"></i>提交</button>
+                    <button type="button" class="btn btn-outline-secondary btn-return"><i class="fa fa-angle-left"></i>返回</button>
+                </div>
+                <div class="footer-content">
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel">
+        <div class="panel-header">
+            <h1 class="panel-title">@Model.Table.Title</h1>
+        </div>
+        <form class="panel-container">
+            <div class="panel-content">
+                <div class="form-row">
+                    @foreach (var showFieldName in Model.Table.Show)
+                    {
+                        var field = Model.Table.Fields.First(n => n.Name == showFieldName);
+                        var idName = Model.Table.Name + "." + field.Name;
+                        <div class="form-group">
+                            <label for="@idName">@field.Label</label>
+                            <input type="text" id="@idName" class="form-control" value="" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="panel-footer">
+                <div class="footer-operation">
+                    <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-check"></i>提交</button>
+                    <button type="button" class="btn btn-outline-secondary btn-return"><i class="fa fa-angle-left"></i>返回</button>
+                </div>
+                <div class="footer-content">
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/insert.js?v=@Model.Runtime.Setting.Version"></script>
+}

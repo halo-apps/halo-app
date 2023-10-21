@@ -1,0 +1,48 @@
+<template>
+  <span class="text-password">{{value}}</span>
+</template>
+
+<script>
+  import {
+    getValue
+  } from '../../../plugins/standards/control-helper.js'
+
+  export default {
+    name: 'TextPassword',
+    props: {
+      table: {
+        type: Object,
+        default: null
+      },
+      field: {
+        type: Object,
+        default: null
+      },
+      index: {
+        type: Number,
+        default: null
+      },
+      form: {
+        type: Object,
+        default: null
+      },
+      from: {
+        type: String,
+        default: null
+      },
+      page: {
+        type: Number,
+        default: null
+      }
+    },
+    computed: {
+      value() {
+        let value = getValue(this.form, this.index, this.table, this.field, this.page)
+        return value
+      }
+    }
+  }
+</script>
+
+<style>
+</style>
