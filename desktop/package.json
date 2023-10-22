@@ -5,11 +5,19 @@
     "dev": "vite",
     "build": "vite build",
     "desktop:preview": "vite preview",
+    "desktop:publish": "npm publish",
     "desktop:tauri:dev": "tauri dev",
     "desktop:tauri:debug": "tauri build -d -v",
     "desktop:tauri:build": "tauri build",
     "desktop:tauri:desktop": "tauri build -c src-tauri/tauri.conf.desktop.json",
     "desktop:tauri:icon": "npx @tauri-apps/tauricon src/assets/logo.png"
+  },
+  "keywords": [
+    "hona",
+    "desktop"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "@micro-zoe/micro-app": "1.0.0-rc.1",

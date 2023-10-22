@@ -1,9 +1,10 @@
 using System;
 using Hona.Commons.Helpers;
 using Hona.Drivers.Signers;
-using Hona.Drivers.Ssos;
+using Hona.Drivers.Tokers;
 using Hona.Executers;
 using Hona.Requests;
+using Hona.Requests.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Hona.Test.Bases;
 
@@ -14,22 +15,20 @@ namespace Hona.Test.Bases;
 public class BaseTest
 {
     /// <summary>
-    /// 执行请求
+    /// 执行请求（无法改进为Requester，因为Requester依赖请求地址，而这里不需要地址，而是直接启动应用执行请求）
     /// </summary>
     public static void ExecuteRequest(Request request, bool throwException = false)
     {
-        var authorization = " pc oYLM7zTPAP6m12tIS3EagOtl4qW+IorWK0hQllm9LQU=  ";
-
-        //VIP：无法改进为Requester，因为Requester依赖请求地址，而这里不需要地址，而是直接启动应用执行请求
-        var sso = SsoFactory.GetSso("Bearer");
-        sso.Open("abc");
-        var identify = sso.Identify(authorization);
+        //加密得到Token
+        var toker = TokerFactory.GetToker("Default");
+        toker.Open("abc");
+        var identity = toker.Encrypt("jay.zhou");
 
         var signer = SignerFactory.GetSigner("Default");
-        signer.Open();
-        var signature = signer.Compute(identify.UserId, request.Url.Value, request.Body, "234");
+        signer.Open("234");
+        var signature = signer.Compute("jay.zhou", request.Url.Value, request.Body);
 
-        request.Headers.Authorization = sso.GetAuthorization(identify, signature);
+        request.Headers.Authorization = new RequestAuthorization { Type = "Bearer", Token = identity.Token, Timestamp = signature.Timestamp, Signature = signature.Signature, Platform = "pc" };
 
         try
         {

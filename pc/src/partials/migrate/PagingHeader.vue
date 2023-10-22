@@ -98,7 +98,7 @@ let migrate = () => {
     <el-dialog class="migrate" draggable title="迁移" width="500px" append-to-body v-model="migrateVisible">
       <el-form label-width="100px" label-position="left">
         <el-form-item label="目标应用">
-          <el-input v-model="centralForm.appTo"></el-input>
+          <el-input style="width: 150px;" v-model="centralForm.appTo"></el-input>
         </el-form-item>
         <el-form-item label="目标中心库">
           <el-select filterable clearable v-model="centralForm.centralTo">
@@ -158,10 +158,6 @@ let migrate = () => {
 
   .to {
     margin: 0 10px;
-  }
-
-  .el-input {
-    width: 170px;
   }
 }
 </style>
