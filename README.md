@@ -30,13 +30,17 @@ PC/Mobile/Desktop/API效果
 
 仓储介绍
 
-| 目录      | 介绍         | 本地端口                              | 容器化 |
-|---------|------------|-----------------------------------|-----|
-| pc      | PC端目录      | 3000                              | √   |
-| mobile  | 移动端目录      | 3001                              | √   |
-| desktop | 桌面端目录      | 3005:PC 3006:API                  | 安装包 |
-| api     | 接口目录       | 3002:https 3003:https 3004:socket | √   |
-| app     | 安卓/IOS开发目录 |                                   | 安装包 |
+| 目录      | 介绍         | 教程                                     | 本地端口                              | 容器化 |
+|---------|------------|----------------------------------------|-----------------------------------|-----|
+| pc      | PC端目录      | <a href="./pc/README.md">使用教程</a>      | 3000                              | √   |
+| mobile  | 移动端目录      | <a href="./mobile/README.md">使用教程</a>  | 3001                              | √   |
+| desktop | 桌面端目录      | <a href="./desktop/README.md">使用教程</a> | 3005:PC 3006:API                  | 安装包 |
+| api     | 接口目录       | <a href="./api/README.md">使用教程</a>     | 3002:https 3003:https 3004:socket | √   |
+| app     | 安卓/IOS开发目录 | 使用教程                                   |                                   | 安装包 |
+
+# 开发教程
+
+建议每个项目端口步长为10，进而保证端口充足。
 
 ## 安装
 
@@ -44,12 +48,12 @@ PC/Mobile/Desktop/API效果
 git clone git@github.com:hona-star/hona-app.git
 ````
 
-## 开发教程
+## 启动
 
-<a href="./pc/README.md">PC教程</a> | <a href="./mobile/README.md">Mobile教程</a> | <a href="./desktop/README.md">
-Desktop教程</a> | <a href="./api/README.md">API教程</a>
+````
+cd pc
 
-Tips：建议每个项目端口步长为10，进而保证端口充足。
+````
 
 # 功能
 
