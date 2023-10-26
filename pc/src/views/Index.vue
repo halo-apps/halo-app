@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import {onMounted} from "vue";
-import {useRoute, useRouter} from "vue-router";
+import {onActivated, onMounted} from "vue";
 import {UrlHelper} from "hona-pc/commons";
 import {useConfigStore, useUserStore, useSettingStore} from "hona-pc/stores";
 import Container from 'hona-pc/components/commons/Container.vue';
@@ -9,19 +8,21 @@ import Panel from 'hona-pc/components/panels/Panel.vue';
 
 let emit = defineEmits(['loaded'])
 let userStore = useUserStore(), configStore = useConfigStore(), settingStore = useSettingStore()
-let $router = useRouter(), $route = useRoute()
 
 let refresh = () => {
 }
 
-let to = (menu) => {
+let to = (menu: any) => {
   let route = UrlHelper.getRoute(menu.url)
   route.query.m = menu.id
   UrlHelper.toUrl(menu.url)
 }
 
+onActivated(() => {
+  emit('loaded', 'sys.name')
+})
+
 onMounted(async () => {
-  emit('loaded')
   let a = await configStore.getConfig('home')
   let b = await configStore.saveConfig('home', {a: 10})
 })
