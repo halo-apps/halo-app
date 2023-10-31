@@ -11,7 +11,7 @@ export default defineConfig(({command, mode}) => {
     base: env.VITE_PUBLIC_DIRECTORY,
     envDir: '.' + envDir,
     build: {
-      outDir: env.VITE_PUBLISH_DIRECTORY,
+      outDir: env.VITE_PUBLISH_DIRECTORY
     },
     // root: './public',
     server: {
@@ -21,7 +21,7 @@ export default defineConfig(({command, mode}) => {
       port: parseInt(env.VITE_PORT)
     },
     optimizeDeps: {
-      exclude: ['echarts', 'vue']
+      exclude: ['echarts', 'vue'],
     },
     plugins: [
       vue(),
@@ -30,8 +30,8 @@ export default defineConfig(({command, mode}) => {
     ],
     resolve: {
       alias: {
-        // "hona-pc": "/hona",
-      }
+        //"hona-pc": "/hona",//引用 hona-pc，会指向到/hona文件夹，并使用package.json中的入口文件
+      },
     },
   }
 })

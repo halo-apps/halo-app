@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {computed, ref} from "vue";
-import {useComponentStore} from "hona-pc/stores";
+import {computed} from "vue";
+import {useComponentStore} from "hona-pc";
 
 let componentStore = useComponentStore()
 

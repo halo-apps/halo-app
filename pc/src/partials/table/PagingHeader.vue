@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import {computed, defineAsyncComponent, ref, toRefs} from "vue";
-import {MessageHelper, TreeHelper} from "hona-pc/commons";
-import {HttpHelper} from "hona-pc/services";
-import {useSettingStore} from "hona-pc/stores";
+import {computed, ref, toRefs} from "vue";
+import {HttpHelper, MessageHelper, TreeHelper, useSettingStore} from "hona-pc";
 
 let emit = defineEmits(['add', 'remove', 'copy', 'show-import', 'show-export', 'multiEdit', 'succeed', 'submit'])
 let props = defineProps({

@@ -2,8 +2,7 @@
 import {onMounted, ref} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import {showDialog} from 'vant';
-import {UrlHelper} from "hona-mobile/helpers";
-import {useI18nStore, useUserStore, useSettingStore} from "hona-mobile/stores";
+import {UrlHelper, useI18nStore, useUserStore, useSettingStore} from "hona-mobile";
 
 let userStore = useUserStore(), settingStore = useSettingStore(), {t} = useI18nStore()
 let $route = useRoute(), $router = useRouter()

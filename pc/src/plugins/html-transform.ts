@@ -1,8 +1,8 @@
-let indexPlugin = (env) => {
+let indexPlugin = (env: object) => {
   let VITE_RUNTIME_VERSION = new Date().getTime().toString()
   return {
     name: 'html-transform',
-    transformIndexHtml(html) {
+    transformIndexHtml(html: string) {
       // console.log(env)
       ///<title>(.*?)<\/title>/
       let keys = Object.keys(env)

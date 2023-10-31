@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import {onActivated, onMounted} from "vue";
-import {UrlHelper} from "hona-pc/commons";
-import {useConfigStore, useUserStore, useSettingStore} from "hona-pc/stores";
-import Container from 'hona-pc/components/commons/Container.vue';
-import PanelGroup from 'hona-pc/components/panels/PanelGroup.vue';
-import Panel from 'hona-pc/components/panels/Panel.vue';
+import {UrlHelper, useConfigStore, useUserStore, useSettingStore, Container, Panel, PanelGroup} from "hona-pc";
 
 let emit = defineEmits(['loaded'])
 let userStore = useUserStore(), configStore = useConfigStore(), settingStore = useSettingStore()

@@ -1,5 +1,4 @@
-import app from "hona-mobile";
-import {useComponentStore, useRouterStore} from "hona-mobile/stores";
+import app, {useComponentStore, useRouterStore} from "hona-mobile";
 import routes from "./router";
 
 let routerStore = useRouterStore(), componentStore = useComponentStore()
@@ -11,3 +10,5 @@ componentStore.registerComponents(app, import.meta.glob('./views/*/*.vue'), './v
 
 let components = {}
 componentStore.add(app, components)
+
+app.mount('.app')

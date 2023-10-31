@@ -6,7 +6,7 @@ Hona框架是一套融合并时刻跟进当下前沿技术的低代码框架，�
 
 Hona框架是一门艺术，框架进步的过程，也是不断突破自我，不断刷新认知的过程。
 
-# 目录
+# 预览
 
 PC/Mobile/Desktop/API效果
 <div style="text-align: center;">
@@ -22,27 +22,27 @@ PC/Mobile/Desktop/API效果
 
 | 包            | 版本                                                                                                        | 介绍                              | 演示                                                                 |
 |--------------|-----------------------------------------------------------------------------------------------------------|---------------------------------|--------------------------------------------------------------------|
-| hona-pc      | [![Npm package version](https://badgen.net/npm/v/hona-pc)](https://www.npmjs.com/package/hona-pc)         | PC框架：基于vue3、element-plus、vite构建 | [https://dev.honastar.com](https://dev.honastar.com)               |
-| hona-mobile  | [![Npm package version](https://badgen.net/npm/v/hona-mobile)](https://www.npmjs.com/package/hona-mobile) | Mobile框架：基于vue3、vant、vite构建     | [https://dev-mobile.honastar.com](https://dev-mobile.honastar.com) |
-| hona-desktop | -                                                                                                         | Desktop框架：基于tauri、vue3、vite4构建  | https://github.com/hona-star/hona-app/releases                     |                                                    |
-| Hona         | [![NuGet stable version](https://badgen.net/nuget/v/Hona)](https://nuget.org/packages/Hona)               | API框架：基于.net7构建                 | [https://api-dev.honastar.com](https://api-dev.honastar.com)       |
-| hona-app     | ...                                                                                                       | 安卓/IOS端框架                       | ...                                                                |
+| `hona-pc`      | [![Npm package version](https://badgen.net/npm/v/hona-pc)](https://www.npmjs.com/package/hona-pc)         | PC框架：基于vue3、element-plus、vite构建 | [https://dev.honastar.com](https://dev.honastar.com)               |
+| `hona-mobile`  | [![Npm package version](https://badgen.net/npm/v/hona-mobile)](https://www.npmjs.com/package/hona-mobile) | Mobile框架：基于vue3、vant、vite构建     | [https://dev-mobile.honastar.com](https://dev-mobile.honastar.com) |
+| `hona-desktop` | -                                                                                                         | Desktop框架：基于tauri、vue3、vite4构建  | https://github.com/hona-star/hona-app/releases                     |                                                    |
+| `Hona`         | [![NuGet stable version](https://badgen.net/nuget/v/Hona)](https://nuget.org/packages/Hona)               | API框架：基于.net7构建                 | [https://api-dev.honastar.com](https://api-dev.honastar.com)       |
+| `hona-app`     | ...                                                                                                       | 安卓/IOS端框架                       | ...                                                                |
 
 仓储介绍
 
-| 目录      | 介绍         | 本地端口                              | 容器化 |
-|---------|------------|-----------------------------------|-----|
-| pc      | PC端目录      | 3000                              | √   |
-| mobile  | 移动端目录      | 3001                              | √   |
-| desktop | 桌面端目录      | 3005:PC 3006:API                  | 安装包 |
-| api     | 接口目录       | 3002:https 3003:https 3004:socket | √   |
-| app     | 安卓/IOS开发目录 |                                   | 安装包 |
+| 目录     | 介绍         | 本地端口                              | 容器化 |
+|--------|------------|-----------------------------------|-----|
+| `pc`    | PC端目录      | 3000                              | √   |
+| `mobile` | 移动端目录      | 3001                              | √   |
+| `desktop` | 桌面端目录      | 3005:PC 3006:API                  | 安装包 |
+| `api`    | 接口目录       | 3002:https 3003:https 3004:socket | √   |
+| `app`    | 安卓/IOS开发目录 |                                   | 安装包 |
 
 ## 安装
 
-````
+```
 git clone git@github.com:hona-star/hona-app.git
-````
+```
 
 ## 开发教程
 
@@ -74,15 +74,15 @@ Tips：建议不同项目端口步长为10，进而保证端口充足。
 
 最简洁的模块搭建流程是：
 
-1. 创建数据表：添加字段，设置字段属性
-2. 创建模块：并选择模块包含的数据表
-3. 配置菜单：配置菜单地址和实际模块中功能的映射关系，如：/sys_user/paging，表示菜单分页显示用户的数据
-4. 页面刷新，验证效果
+1. `创建数据表` 添加字段，设置字段属性
+2. `创建模块` 并选择模块包含的数据表
+3. `配置菜单` 配置菜单地址和实际模块中功能的映射关系，如：/sys_user/paging，表示菜单分页显示用户的数据
+4. `页面刷新` 验证效果
 
 如果不是超管，需要配置权限：
 
-1. 创建角色：定义角色可以访问的菜单
-2. 分配角色：指定哪些用户可以拥有不同权限的角色
+1. `创建角色` 定义角色可以访问的菜单
+2. `分配角色` 指定哪些用户可以拥有不同权限的角色
 
 ## 案例
 

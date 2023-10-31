@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {StringHelper} from "hona-pc/commons";
+import {StringHelper} from "hona-pc";
 
 let props = defineProps({
   data: {type: Object},

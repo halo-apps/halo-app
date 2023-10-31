@@ -1,8 +1,6 @@
 <script setup>
 import {ref, toRefs} from "vue";
-import {MessageHelper} from "hona-pc/commons";
-import {HttpHelper} from "hona-pc/services";
-import PanelOperation from "hona-pc/components/panels/PanelOperation.vue"
+import {MessageHelper, HttpHelper, PanelOperation} from "hona-pc";
 
 let props = defineProps({
   route: {type: Object, required: true},//要显示哪个路由的表单信息

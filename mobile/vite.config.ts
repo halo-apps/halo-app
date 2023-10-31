@@ -8,14 +8,15 @@ export default (({command, mode}) => {
   // console.log(env)
   return defineConfig({
     base: '/', //配置资源路径是根目录
-    env: '.' + envDir,
+    envDir: '.' + envDir,
     server: {
       open: true,
       host: '0.0.0.0',
       https: false,
       port: parseInt(env.VITE_PORT)
     },
-    css: { //防止vite build卡死
+    css: {
+      //防止vite build卡死
       preprocessorOptions: {
         scss: {
           charset: false
