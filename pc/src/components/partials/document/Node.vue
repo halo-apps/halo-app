@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import {toRefs} from "vue";
 import {StringHelper} from "hona-pc";
 
 let props = defineProps({
+  table: {type: Object},
   data: {type: Object},
   node: {type: Object},
-  table: {type: Object}
 })
+let {table, data, node} = toRefs(props)
 
-let getNumber = (node, rows) => {
-  let number = (node.parent.data.Children ? node.parent.data.Children.indexOf(rows) : node.parent.data.indexOf(rows)) + 1
+let getNumber = (node: any, row: any) => {
+  let number = (node.parent.data.Children ? node.parent.data.Children.indexOf(row) : node.parent.data.indexOf(row)) + 1
   return StringHelper.padLeft(number, 2, '0')
 }
 </script>

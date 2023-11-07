@@ -2,6 +2,7 @@ import {defineConfig, loadEnv} from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import indexPlugin from "./src/plugins/html-transform";
+import {Plugin as importToCDN} from 'vite-plugin-cdn-import'
 
 export default defineConfig(({command, mode}) => {
   let envDir = '/env'
@@ -27,6 +28,15 @@ export default defineConfig(({command, mode}) => {
       vue(),
       vueJsx(),
       indexPlugin(env),
+      //本地使用npm包引入，生产环境用CDN引入，可减少发布时间 和 生产页面加载速度
+      // importToCDN({
+      //   modules: [{
+      //     name: 'element-plus',//依赖名称
+      //     var: "ElementPlus",//全局变量名
+      //     path: "https://cdn.jsdelivr.net/npm/element-plus@2.4.1/dist/index.full.min.js",//CDN链接
+      //     css: "https://cdn.jsdelivr.net/npm/element-plus@2.4.1/dist/index.min.css", // 依赖有css就填，没有就去掉这个
+      //   }]
+      // })
     ],
     resolve: {
       alias: {

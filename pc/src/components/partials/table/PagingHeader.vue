@@ -8,7 +8,6 @@ let props = defineProps({
   next: Object,
   data: Object,
   selection: Array,
-  parent: Object,
 })
 let {table, next, data, selection} = toRefs(props)
 
@@ -47,11 +46,12 @@ let showImportTable = () => {
   })
 }
 
-let selectionChange = (selection) => {
+let selectionChange = (selection: any[]) => {
   form.value.tables = selection.map(n => n.name)
 }
 
-let changeDatabase = (val) => { //更换数据库
+//更换数据库
+let changeDatabase = (val: any) => {
   form.value.tables = [] //清空选择的数据表
   if (!val)
     return

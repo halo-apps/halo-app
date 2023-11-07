@@ -11,10 +11,6 @@ let mounted = async payload => {
   style.innerHTML = `
   .header-right{padding-right:144px;}
   .el-drawer__header .el-drawer__title{flex: initial;}
-  .winbox.max .wb-header{flex-direction: row;}
-  .winbox.max .wb-header .wb-title{text-indent: -180px;}
-  .winbox.max .wb-header .wb-control{flex-direction: row-reverse;}
-  .winbox.max .wb-header .refresh-icon{position:initial;}
   `
   head.appendChild(style);
 
@@ -26,7 +22,13 @@ let mounted = async payload => {
   //内存泄漏？
   headerMiddle.addEventListener('mousedown', mouseDown)
 }
-
+//最大化
+let maximize = (payload: boolean) => {
+  if (payload)
+    document.documentElement.classList.add('maximize')
+  else
+    document.documentElement.classList.remove('maximize')
+}
 //主题变更
 let changeTheme = payload => {
   document.documentElement.className = ''
@@ -34,7 +36,11 @@ let changeTheme = payload => {
 }
 
 //接收到事件激发
-window['emit'] = (event, payload) => {
+window['emit'] = (event: string, payload: any) => {
+  if (event == 'maximize') {
+    maximize(payload)
+    return
+  }
   if (event == 'mounted') {
     mounted(payload)
     return

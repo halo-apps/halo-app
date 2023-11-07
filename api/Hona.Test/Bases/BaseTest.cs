@@ -28,7 +28,7 @@ public class BaseTest
         signer.Open("234");
         var signature = signer.Compute("jay.zhou", request.Url.Value, request.Body);
 
-        request.Headers.Authorization = new RequestAuthorization { Type = "Bearer", Token = identity.Token, Timestamp = signature.Timestamp, Signature = signature.Signature, Platform = "pc" };
+        request.Headers.Authorization = new RequestAuthorization { Type = "Bearer", Token = identity.Token, Timestamp = signature.Timestamp, Signature = signature.Signature, Terminal = "pc" };
 
         try
         {

@@ -4,8 +4,8 @@ import {toRefs} from "vue";
 let emit = defineEmits(['add', 'insert', 'copy', 'remove'])
 let props = defineProps({
   module: Object,//页面信息
-  data: Object,//大表单
   table: Object,//表架构
+  data: Object,//大表单
   selection: Array,//选区内容
 })
 let {table, data, selection} = toRefs(props)
