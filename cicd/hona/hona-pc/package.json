@@ -1,0 +1,30 @@
+{
+  "name": "hona-pc",
+  "version": "1.2.22",
+  "description": "Hona pc framework",
+  "scripts": {
+    "hona-pc:build": "npx vite build",
+    "hona-pc:build:watch": "npx vite build --watch",
+    "hona-pc:publish": "npx vite build & npm publish",
+    "hona-pc:test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "main": "./main.ts",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "hona",
+    "pc"
+  ],
+  "author": "jay.zhou <869758965@qq.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "3.6.3",
+    "vite-plugin-libcss": "1.1.1"
+  }
+}

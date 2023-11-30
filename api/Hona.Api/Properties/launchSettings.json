@@ -3,7 +3,7 @@
     "Hona.Api": {
       "commandName": "Project",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ENV": ""
       },
       "applicationUrl": "http://localhost:3002;https://localhost:3003"
     }

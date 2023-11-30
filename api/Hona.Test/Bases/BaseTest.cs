@@ -1,5 +1,6 @@
 using System;
 using Hona.Commons.Helpers;
+using Hona.Drivers.Configers;
 using Hona.Drivers.Signers;
 using Hona.Drivers.Tokers;
 using Hona.Executers;
@@ -19,6 +20,8 @@ public class BaseTest
     /// </summary>
     public static void ExecuteRequest(Request request, bool throwException = false)
     {
+        //设置业务配置器
+        ConfigerFactory.Business = ConfigerFactory.Default;
         //加密得到Token
         var toker = TokerFactory.GetToker("Default");
         toker.Open("abc");

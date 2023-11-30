@@ -8,6 +8,7 @@ indent_size = 2 #缩进大小
 end_of_line = lf
 insert_final_newline = false #是否使用新行结束文档
 trim_trailing_whitespace = true
+space_in_parentheses = false #大括号是否添加空格
 
 [package.json]
 insert_final_newline = true #使用新行结尾，防止服务端拉取改动package.json文件

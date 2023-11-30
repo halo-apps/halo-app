@@ -1,2 +1,5 @@
-#合并冲突的处理
-hona/* merge=ours
+api/Hona/Plugins/Plugin.cs merge=ours
+
+api/Hona/* merge=ours
+mobile/hona/* merge=ours
+pc/hona/* merge=ours

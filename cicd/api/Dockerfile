@@ -1,7 +1,7 @@
-FROM registry.cn-shanghai.aliyuncs.com/hona_base/aspnet:7.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR "/app"
 
-FROM registry.cn-shanghai.aliyuncs.com/hona_base/dotnet_sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR "/src"
 #把整个api项目，复制到当前工作目录
 COPY "../../api" .

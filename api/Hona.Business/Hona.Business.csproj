@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hona.Model\Hona.Model.csproj" />
+    <ProjectReference Include="..\Hona.Plugin\Hona.Plugin.csproj" />
   </ItemGroup>
 
 </Project>

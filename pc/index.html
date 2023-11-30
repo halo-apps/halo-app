@@ -9,7 +9,7 @@
   <link rel="manifest" href="/manifest.json"/>
   <script>
     let serviceWorker = navigator.serviceWorker
-    serviceWorker?.register('/default/js/sw.js')
+    serviceWorker?.register('{{VITE_BASE}}default/js/sw.js')
   </script>
   <style>
     /*防止网速慢，导致产生额外的边距和填充*/
@@ -32,7 +32,7 @@
       justify-content: center;
     }
   </style>
-  <script src="<%= VITE_PUBLIC_DIRECTORY %><%= VITE_SETTING_FILE %>?v=<%= VITE_RUNTIME_VERSION %>"></script>
+  <script src="{{VITE_BASE}}{{VITE_SETTING_FILE}}?v={{VITE_RUNTIME_VERSION}}"></script>
 </head>
 <body class="app" spellcheck="false">
 <div class="first-loading">页面加载中，请稍侯...</div>

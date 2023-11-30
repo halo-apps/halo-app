@@ -1,15 +1,15 @@
 import {defineConfig, loadEnv} from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import indexPlugin from "./src/plugins/html-transform";
+import {htmlTransform} from './src/plugins';
 import {Plugin as importToCDN} from 'vite-plugin-cdn-import'
 
-export default defineConfig(({command, mode}) => {
+export default (({command, mode}) => {
   let envDir = '/env'
   const env = loadEnv(mode, process.cwd() + envDir)
   // console.log(env)
-  return {
-    base: env.VITE_PUBLIC_DIRECTORY,
+  return defineConfig({
+    base: env.VITE_BASE,
     envDir: '.' + envDir,
     build: {
       outDir: env.VITE_PUBLISH_DIRECTORY
@@ -18,7 +18,6 @@ export default defineConfig(({command, mode}) => {
     server: {
       open: true,
       host: '0.0.0.0',
-      https: false,
       port: parseInt(env.VITE_PORT)
     },
     optimizeDeps: {
@@ -27,7 +26,7 @@ export default defineConfig(({command, mode}) => {
     plugins: [
       vue(),
       vueJsx(),
-      indexPlugin(env),
+      htmlTransform(env),
       //本地使用npm包引入，生产环境用CDN引入，可减少发布时间 和 生产页面加载速度
       // importToCDN({
       //   modules: [{
@@ -43,5 +42,5 @@ export default defineConfig(({command, mode}) => {
         //"hona-pc": "/hona",//引用 hona-pc，会指向到/hona文件夹，并使用package.json中的入口文件
       },
     },
-  }
+  })
 })

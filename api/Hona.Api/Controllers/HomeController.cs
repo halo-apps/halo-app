@@ -1,15 +1,18 @@
 ﻿using Hona.Commons.Helpers;
-using Microsoft.AspNetCore.Hosting;
+using Hona.Drivers.Configers;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+
 namespace Hona.Api.Controllers;
 
-public class HomeController : Controller
+public class HomeController : ControllerBase
 {
     public IWebHostEnvironment WebHostEnvironment { get; set; }
     public HomeController(IWebHostEnvironment webHostEnvironment)
     {
         WebHostEnvironment = webHostEnvironment;
+        var configer = ConfigerFactory.Business;
+        var central = configer.GetValue("central", "name");
     }
 
     /// <summary>
@@ -18,7 +21,7 @@ public class HomeController : Controller
     [Route("/status")]
     public object Status()
     {
-        var config = ObjectHelper.Clone(ConfigHelper.GetConfig());
+        var config = ObjectHelper.Clone(ConfigerFactory.Default.Config);
         //清空敏感信息
         config.Central = null;
         config.Business = null;

@@ -21,7 +21,7 @@ spec:
           image: ${image}
           imagePullPolicy: IfNotPresent # 本地没有再去远程拉取镜像
           ports:
-            - containerPort: 80
+            - containerPort: 8080 # 表示容器内的应用程序在此端口上监听
           env:
             - name: TZ
               value: Asia/Shanghai
@@ -44,10 +44,10 @@ spec:
   ports:
     - name: ${name}
       port: 80
-      targetPort: 80
+      targetPort: 8080 # 必须正确，Nginx把流量转发到容器哪个端口
     - name: ${name}-https
       port: 443
-      targetPort: 443
+      targetPort: 8080 # Nginx把流量转发到容器哪个端口
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

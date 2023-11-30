@@ -1,19 +1,28 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-namespace Hona.Api;
+using Hona.Api.Extensions;
+using Hona.Drivers.Configers;
 
-public class Program
+var configer = ConfigerFactory.Default;
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddHona(configer);
+builder.Services.AddControllers();
+
+//构建
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
 {
-    public static void Main(string[] args)
-    {
-        CreateHostBuilder(args).Build().Run();
-    }
-
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                //本地不自定义URL监听，本地配置后会导致非调试模式下无法启动，线上启用监听会导致SSL证书无法使用而启动失败
-                webBuilder.UseStartup<Startup>();
-            });
+    app.UseDeveloperExceptionPage();
 }
+
+app.UseHona(configer);
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

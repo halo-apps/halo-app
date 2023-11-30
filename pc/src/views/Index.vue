@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import {onActivated, onMounted} from "vue";
-import {UrlHelper, useConfigStore, useUserStore, useSettingStore, Container, Panel, PanelGroup} from "hona-pc";
+import {UrlHelper, useConfigStore, useUserStore, Container, Panel, PanelGroup} from "hona-pc";
 
-let emit = defineEmits(['loaded'])
-let userStore = useUserStore(), configStore = useConfigStore(), settingStore = useSettingStore()
+let emit = defineEmits(['loaded', 'crud'])
+let userStore = useUserStore(), configStore = useConfigStore()
 
 let refresh = () => {
 }
 
 let to = (menu: any) => {
-  let route = UrlHelper.getRoute(menu.url)
-  route.query.m = menu.id
-  UrlHelper.toUrl(menu.url)
+  let url = UrlHelper.getUrl(menu.url, {m: menu.id})
+  UrlHelper.toUrl(url)
+  emit('crud', url)
 }
 
 onActivated(() => {

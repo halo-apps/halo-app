@@ -1,15 +1,26 @@
 {
+  //插件目录放置ts配置文件的目的是：方便查看源码时，识别出import.meta.glob方法可用
   "compilerOptions": {
+    //生成d.ts文件
+    "declaration": true,
     "module": "ES2022",
+    //防止提示：Cannot find module 'pinia'. Did you mean to set the 'moduleResolution' option to 'node', or to add aliases to the 'paths' option?
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "ES2022",
     "types": [
+      "@types",
       //防止提示：Property 'globEager' does not exist on type 'ImportMeta'.
       "vite/client"
     ],
-    "allowSyntheticDefaultImports": true
+    //否则moment提示：can only be default-imported using the 'allowSyntheticDefaultImports' flag
+    "allowSyntheticDefaultImports": true,
+    //跳过第三方包类型检查，收益：
+    "skipLibCheck": true
   },
+  "include": [
+    "env.d.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
-import {useRoute, useRouter} from "vue-router";
 import {showDialog} from 'vant';
-import {UrlHelper, useI18nStore, useUserStore, useSettingStore} from "hona-mobile";
+import {UrlHelper, useI18nStore, useUserStore, useSettingStore, useRouterStore} from "hona-mobile";
 
-let userStore = useUserStore(), settingStore = useSettingStore(), {t} = useI18nStore()
-let $route = useRoute(), $router = useRouter()
-let loading = ref(true), operationVisible = ref(false)
+let emit = defineEmits(['loaded'])
+let userStore = useUserStore(), settingStore = useSettingStore(), {t} = useI18nStore(), {router} = useRouterStore()
+let operationVisible = ref(false)
 let active = ref()
 let operations = ref([{text: '设置'}, {text: '退出'}])
 
-let selectOperation = action => {
+let selectOperation = (action: any) => {
   if (action.text == '设置') {
     return
   }
   if (action.text == '退出')
-    $router.push('/logout')
+    router.push('/logout')
 }
 
 let showDescription = () => {
@@ -23,18 +22,20 @@ let showDescription = () => {
   showDialog({message})
 }
 
-let getMenuUrl = (menu, id) => {
+//获取菜单相对地址
+let getMenuUrl = (menu: any, id: any) => {
   let result = UrlHelper.getUrl(menu.url, {m: id})
   return result
 }
+
 let init = () => {
-  if (userStore.menus.length > 0)
-    active.value = $route.query.m || userStore.menus[0].id.toString()
-  loading.value = true
+  if (userStore.menus?.length > 0)
+    active.value = router.currentRoute.query.m || userStore.menus[0].id.toString()
 }
 
 onMounted(() => {
   init()
+  emit('loaded')
 })
 </script>
 
@@ -54,12 +55,12 @@ onMounted(() => {
       <van-icon name="question-o" @click="showDescription"/>
     </template>
   </van-nav-bar>
-  <div class="container page-index footer">
+  <div class="container footer">
     <van-notice-bar left-icon="volume-o" scrollable :text="$t('sys.description')"/>
     <div v-for="menu in userStore.menus" v-if="userStore.menus">
       <div class="index-title">{{ menu.title }}</div>
       <van-grid clickable>
-        <van-grid-item :icon="child.icon" :to="getMenuUrl(child,child.id)" :text="child.title"
+        <van-grid-item :icon="child.icon" :to="getMenuUrl(child,child.id,false)" :text="child.title"
                        v-for="child in menu.children">
         </van-grid-item>
       </van-grid>

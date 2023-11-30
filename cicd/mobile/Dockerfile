@@ -1,5 +1,5 @@
 # 构建阶段
-FROM registry.cn-shanghai.aliyuncs.com/hona_base/gplane_pnpm:alpine AS build
+FROM registry.cn-shanghai.aliyuncs.com/hona-base/pnpm:8.11.0 AS build
 
 WORKDIR /cicd
 COPY ../../cicd/mobile .
@@ -13,7 +13,7 @@ RUN pnpm install
 RUN npm run mobile:build #一次构建,多环境使用
 
 # 生成镜像阶段
-FROM registry.cn-shanghai.aliyuncs.com/hona_base/nginx as publish
+FROM registry.cn-shanghai.aliyuncs.com/hona-base/nginx:1.25.3 as publish
 
 # 复制构建后的文件到/app目录
 WORKDIR /app
