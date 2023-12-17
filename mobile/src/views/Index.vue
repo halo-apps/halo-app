@@ -56,7 +56,7 @@ onMounted(() => {
     </template>
   </van-nav-bar>
   <div class="container footer">
-    <van-notice-bar left-icon="volume-o" scrollable :text="$t('sys.description')"/>
+    <van-notice-bar left-icon="volume-o" scrollable :text="t('sys.description')"/>
     <div v-for="menu in userStore.menus" v-if="userStore.menus">
       <div class="index-title">{{ menu.title }}</div>
       <van-grid clickable>

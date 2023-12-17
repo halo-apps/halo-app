@@ -1,6 +1,7 @@
 //首页VITE变量替换插件
 let htmlTransform = (env: object) => {
-  let VITE_RUNTIME_VERSION = new Date().getTime().toString()
+  let time = new Date().toLocaleString()
+  let VITE_RUNTIME_VERSION = time.replace(/[\/:]/g, '').replace(' ', '_')
   return {
     name: 'html-transform',
     transformIndexHtml(html: string) {

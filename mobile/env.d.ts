@@ -5,6 +5,7 @@ export { }
 
 declare module 'vue' {
   interface ComponentCustomProperties {
+    t: (key: any, options: any = null) => string,
     $t_enum: (name: string, value: string, options: any = null) => string,
     $t_field: (table: string, field: string, options: any = null) => string,
     $t_field_choose_placeholder: (table: string, field: string, options: any = null) => string,

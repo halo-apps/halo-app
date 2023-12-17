@@ -2,7 +2,7 @@
 using Hona.Drivers.Configers;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpOverrides;
-
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 namespace Hona.Api.Extensions;
 
 public static class WebApplicationBuilderExtensions
@@ -34,6 +34,12 @@ public static class WebApplicationBuilderExtensions
         {
             options.ValueLengthLimit = int.MaxValue;
             options.MultipartBodyLengthLimit = long.MaxValue; // In case of multipart
+        });
+
+        //解决413 Payload Too Large
+        builder.Services.Configure<KestrelServerOptions>(options =>
+        {
+            options.Limits.MaxRequestBodySize = null;
         });
 
         //解决Multipart body length limit 134217728 exceeded

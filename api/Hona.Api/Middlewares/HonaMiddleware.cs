@@ -3,7 +3,6 @@ using Hona.Commons.Extensions;
 using Hona.Commons.Helpers;
 using Hona.Drivers.Requesters;
 using Hona.Drivers.Requesters.Entities;
-using Hona.Executers;
 using Hona.Requests;
 using Hona.Requests.Entities;
 

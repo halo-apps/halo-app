@@ -7,22 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddHona(configer);
 builder.Services.AddControllers();
 
-//¹¹½¨
+//æž„å»º
 var app = builder.Build();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-
 app.UseHona(configer);
-
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

@@ -30,6 +30,7 @@ onMounted(() => {
       { 'id': 'root', 'isroot': true, 'topic': settingStore.name },
       { 'id': 'pc', 'isroot': false, 'topic': 'PC', parentid: 'root' },
       { 'id': 'mobile', 'isroot': false, 'topic': 'Mobile', parentid: 'root' },
+      { 'id': 'openapi', 'isroot': false, 'topic': 'OpenAPI', parentid: 'root' },
       { 'id': 'desktop', 'isroot': false, 'topic': 'Desktop', parentid: 'root' },
       { 'id': 'windows', 'isroot': false, 'topic': 'Windows', parentid: 'desktop' },
       { 'id': 'macos', 'isroot': false, 'topic': 'MacOS', parentid: 'desktop' },

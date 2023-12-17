@@ -85,21 +85,21 @@ let tableRows = computed(() => { //当前选中的数据库的所有表
   <div class="search-title">
     <el-button type="primary" class="btn-insert" @click.exact="add()" @click.ctrl="add(true)">
       <template #icon><i class="fa fa-plus"></i></template>
-      {{ $t('paging.add') }}
+      {{ t('paging.add') }}
     </el-button>
-    <el-popconfirm :width="180" :title="$t('common.confirm_delete')" :confirm-button-text="$t('common.confirm')"
-                   :cancel-button-text="$t('common.cancel')" @confirm="confirm" v-if="next.delete">
+    <el-popconfirm :width="180" :title="t('common.confirm_delete')" :confirm-button-text="t('common.confirm')"
+                   :cancel-button-text="t('common.cancel')" @confirm="confirm" v-if="next.delete">
       <template #reference>
         <el-button type="danger" class="btn-delete" plain :disabled="selection.length==0">
           <template #icon><i class="fa fa-trash-alt"></i></template>
-          {{ $t('common.delete') }}({{ selection.length }})
+          {{ t('common.delete') }}({{ selection.length }})
         </el-button>
       </template>
     </el-popconfirm>
     <el-button type="primary" :disabled="!selection.length" @click="emit('copy', selection)"
                v-if="next.copy">
       <template #icon><i class="fa fa-copy"></i></template>
-      {{ $t('common.copy') }}{{ selection.length ? '(' + selection.length + ')' : '' }}
+      {{ t('common.copy') }}{{ selection.length ? '(' + selection.length + ')' : '' }}
     </el-button>
     <el-button type="primary" :icon="parent.multiEdit.isEditing?'el-icon-check':'el-icon-edit'"
                @click="emit('multi-edit')" :loading="parent.multiEdit.loading"
@@ -108,26 +108,26 @@ let tableRows = computed(() => { //当前选中的数据库的所有表
     </el-button>
     <el-button @click="showImportTable">
       <template #icon><i class="fa fa-file-import"></i></template>
-      {{ $t('common.import_table') }}
+      {{ t('common.import_table') }}
     </el-button>
   </div>
   <div class="search-operation">
     <el-button type="primary" @click="search">
       <template #icon><i class="fa fa-search"></i></template>
-      {{ $t('paging.search') }}
+      {{ t('paging.search') }}
     </el-button>
     <el-button @click="showImport" v-if="next.import">
       <template #icon><i class="fa fa-file-import"></i></template>
-      {{ $t('paging.import') }}
+      {{ t('paging.import') }}
     </el-button>
     <el-button @click="showExport" v-if="next.export">
       <template #icon><i class="fa fa-file-export"></i></template>
-      {{ $t('paging.export') }}
+      {{ t('paging.export') }}
     </el-button>
   </div>
-  <el-dialog draggable :title="$t('common.import_table')" width="500px" append-to-body v-model="showDialog">
+  <el-dialog draggable :title="t('common.import_table')" width="500px" append-to-body v-model="showDialog">
     <el-form>
-      <el-form-item :label="$t('common.database')">
+      <el-form-item :label="t('common.database')">
         <el-select clearable filterable @change="changeDatabase" v-model="form.database">
           <el-option v-for="item in databases" :key="item.value" :label="item.text" :value="item.value">
             <div class="autocomplete-text">{{ item.text }}</div>
@@ -154,7 +154,7 @@ let tableRows = computed(() => { //当前选中的数据库的所有表
         <span v-if="tableRows.length>0" style="font-size: 12px;">{{ form.tables.length }}/{{ tableRows.length }}</span>
       </div>
       <div class="footer-content">
-        <el-button type="primary" :loading="importing" @click="submitImport">{{ $t('paging.import') }}</el-button>
+        <el-button type="primary" :loading="importing" @click="submitImport">{{ t('paging.import') }}</el-button>
       </div>
     </template>
   </el-dialog>

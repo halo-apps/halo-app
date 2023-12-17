@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {onActivated, onMounted} from "vue";
+import {onActivated} from "vue";
 import {UrlHelper, useConfigStore, useUserStore, Container, Panel, PanelGroup} from "hona-pc";
 
-let emit = defineEmits(['loaded', 'crud'])
+let emit = defineEmits(['loaded', 'navigate'])
 let userStore = useUserStore(), configStore = useConfigStore()
 
 let refresh = () => {
@@ -11,24 +11,20 @@ let refresh = () => {
 let to = (menu: any) => {
   let url = UrlHelper.getUrl(menu.url, {m: menu.id})
   UrlHelper.toUrl(url)
-  emit('crud', url)
+  emit('navigate', url)
 }
 
 onActivated(() => {
   emit('loaded', 'sys.name')
 })
 
-onMounted(async () => {
-  let a = await configStore.getConfig('home')
-  let b = await configStore.saveConfig('home', {a: 10})
-})
 
 defineExpose({refresh})
 </script>
 
 <template>
   <container class="home">
-    <el-alert :title="`${$t('sys.welcome')} ${$t('sys.description')}`" type="info" style="margin-bottom: 10px;"
+    <el-alert :title="`${t('sys.welcome')} ${t('sys.description')}`" type="info" style="margin-bottom: 10px;"
               show-icon></el-alert>
     <panel-group>
       <panel dark :title="menu.title" v-for="menu in userStore.menus">

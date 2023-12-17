@@ -54,7 +54,7 @@ let publishPlugin = (command) => {
     <el-button type="primary" icon="el-icon-edit" @click="parent.edit">修改</el-button>
     <el-button @click="close">
       <template #icon><i class="fa fa-chevron-left"></i></template>
-      {{ $t('common.back') }}
+      {{ t('common.back') }}
     </el-button>
   </panel-operation>
 </template>

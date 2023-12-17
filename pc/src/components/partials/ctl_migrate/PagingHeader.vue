@@ -70,20 +70,20 @@ let migrate = () => {
   <div class="search-title">
     <el-button type="primary" class="btn-insert" @click.exact="add()" @click.ctrl="add(true)">
       <template #icon><i class="fa fa-plus"></i></template>
-      {{ $t('paging.add') }}
+      {{ t('paging.add') }}
     </el-button>
-    <el-popconfirm :width="180" :title="$t('common.confirm_delete')" :confirm-button-text="$t('common.confirm')"
-                   :cancel-button-text="$t('common.cancel')" @confirm="confirm" v-if="next.delete">
+    <el-popconfirm :width="180" :title="t('common.confirm_delete')" :confirm-button-text="t('common.confirm')"
+                   :cancel-button-text="t('common.cancel')" @confirm="confirm" v-if="next.delete">
       <template #reference>
         <el-button type="danger" class="btn-delete" plain :disabled="selection.length==0">
           <template #icon><i class="fa fa-trash-alt"></i></template>
-          {{ $t('common.delete') }}({{ selection.length }})
+          {{ t('common.delete') }}({{ selection.length }})
         </el-button>
       </template>
     </el-popconfirm>
     <el-button type="primary" :disabled="!selection.length" @click="$emit('copy', selection)">
       <template #icon><i class="fa fa-copy"></i></template>
-      {{ $t('common.copy') }}{{ selection.length ? '(' + selection.length + ')' : '' }}
+      {{ t('common.copy') }}{{ selection.length ? '(' + selection.length + ')' : '' }}
     </el-button>
     <el-button type="primary" :icon="parent.multiEdit.isEditing?'el-icon-check':'el-icon-edit'"
                :loading="parent.multiEdit.loading" @click="$emit('multi-edit')"
@@ -92,7 +92,7 @@ let migrate = () => {
     </el-button>
     <el-button :disabled="selection.length==0" @click="showMigrate">
       <template #icon><i class="fa fa-database"></i></template>
-      {{ $t('setting.migration') }}
+      {{ t('setting.migration') }}
     </el-button>
     <el-dialog class="migrate" draggable title="迁移" width="500px" append-to-body v-model="migrateVisible">
       <el-form label-width="100px" label-position="left">
@@ -136,15 +136,15 @@ let migrate = () => {
   <div class="search-operation">
     <el-button type="primary" @click="search">
       <template #icon><i class="fa fa-search"></i></template>
-      {{ $t('paging.search') }}
+      {{ t('paging.search') }}
     </el-button>
     <el-button @click="emit('show-import')" v-if="next.import">
       <template #icon><i class="fa fa-file-import"></i></template>
-      {{ $t('paging.import') }}
+      {{ t('paging.import') }}
     </el-button>
     <el-button @click="emit('show-export')" v-if="next.export">
       <template #icon><i class="fa fa-file-export"></i></template>
-      {{ $t('paging.export') }}
+      {{ t('paging.export') }}
     </el-button>
   </div>
 </template>

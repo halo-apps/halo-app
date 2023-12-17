@@ -101,15 +101,15 @@ let setDefaultFields = () => {
 <template>
   <el-button type="primary" plain @click="add" v-if="selection.length == 0">
     <template #icon><i class="fa fa-plus"></i></template>
-    {{ $t('update.add') }}
+    {{ t('update.add') }}
   </el-button>
   <el-button type="primary" plain @click="insert" v-else>
     <template #icon><i class="fa fa-plus"></i></template>
-    {{ $t('update.insert') }}
+    {{ t('update.insert') }}
   </el-button>
   <el-button type="primary" plain :disabled="selection.length == 0" @click="copy">
     <template #icon><i class="fa fa-copy"></i></template>
-    {{ $t('common.copy') }}({{ selection.length }})
+    {{ t('common.copy') }}({{ selection.length }})
   </el-button>
   <el-button type="danger" plain :disabled="selection.length == 0" @click="remove">
     <template #icon><i class="fa fa-trash"></i></template>

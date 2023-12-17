@@ -5,16 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Hona.Api.Controllers;
 
-public class HomeController : ControllerBase
+public class HomeController(IHostEnvironment env) : ControllerBase
 {
-    public IWebHostEnvironment WebHostEnvironment { get; set; }
-    public HomeController(IWebHostEnvironment webHostEnvironment)
-    {
-        WebHostEnvironment = webHostEnvironment;
-        var configer = ConfigerFactory.Business;
-        var central = configer.GetValue("central", "name");
-    }
-
     /// <summary>
     /// 状态检查接口
     /// </summary>
@@ -29,11 +21,14 @@ public class HomeController : ControllerBase
         //limiter
         var result = new
         {
-            LocalIp = NetworkHelper.GetIp() + ":" + Request.HttpContext.Connection.LocalPort,
-            RemoteIp = Request.HttpContext.Connection.RemoteIpAddress + ":" + Request.HttpContext.Connection.RemotePort,
-            Host = NetworkHelper.GetHost(),
-            Root = DirectoryHelper.GetRunDirectory(),
-            WebEnvironment = WebHostEnvironment.EnvironmentName,
+            Host = new
+            {
+                Name = NetworkHelper.GetHost(),
+                Environment = env.EnvironmentName,
+                Root = DirectoryHelper.GetRunDirectory(),
+                LocalIp = NetworkHelper.GetIp() + ":" + Request.HttpContext.Connection.LocalPort,
+                RemoteIp = Request.HttpContext.Connection.RemoteIpAddress + ":" + Request.HttpContext.Connection.RemotePort,
+            },
             Config = config,
             Schema = Request.Scheme,
             Url = Request.GetDisplayUrl(),

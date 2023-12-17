@@ -3,7 +3,6 @@ using Hona.Commons.Helpers;
 using Hona.Drivers.Configers;
 using Hona.Drivers.Signers;
 using Hona.Drivers.Tokers;
-using Hona.Executers;
 using Hona.Requests;
 using Hona.Requests.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -31,7 +30,8 @@ public class BaseTest
         signer.Open("234");
         var signature = signer.Compute("jay.zhou", request.Url.Value, request.Body);
 
-        request.Headers.Authorization = new RequestAuthorization { Type = "Bearer", Token = identity.Token, Timestamp = signature.Timestamp, Signature = signature.Signature, Terminal = "pc" };
+        var authorization = new RequestAuthorization { Type = "Bearer", Token = identity.Token, Timestamp = signature.Timestamp, Signature = signature.Signature, Terminal = "pc" };
+        request.Headers["authorization"] = authorization.ToString();
 
         try
         {
